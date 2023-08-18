@@ -14,7 +14,41 @@ public class Instrumento {
 	private String categoria;
 	private String description;
 
-	private Instrumento() {}
+	public Instrumento() {
+
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public Instrumento(String nombre, String categoria, String description) {
 		this.nombre = nombre;
@@ -27,57 +61,21 @@ public class Instrumento {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Instrumento instrumento = (Instrumento) o;
-		return Objects.equals(id, instrumento.id) &&
-			Objects.equals(nombre, instrumento.nombre) &&
-			Objects.equals(categoria, instrumento.categoria) &&
-			Objects.equals(description, instrumento.description);
+		return Objects.equals(id, instrumento.id) && Objects.equals(nombre, instrumento.nombre) && Objects.equals(categoria, instrumento.categoria) && Objects.equals(description, instrumento.description);
 	}
 
 	@Override
 	public int hashCode() {
-
 		return Objects.hash(id, nombre, categoria, description);
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee{" +
-			"id=" + id +
-			", firstName='" + firstName + '\'' +
-			", lastName='" + lastName + '\'' +
-			", description='" + description + '\'' +
-			'}';
+		return "Instrumento{" +
+				"id=" + id +
+				", nombre='" + nombre + '\'' +
+				", categoria='" + categoria + '\'' +
+				", description='" + description + '\'' +
+				'}';
 	}
 }
