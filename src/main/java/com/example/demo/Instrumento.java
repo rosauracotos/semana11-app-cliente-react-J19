@@ -7,18 +7,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Employee {
+public class Instrumento {
 
 	private @Id @GeneratedValue Long id;
-	private String firstName;
-	private String lastName;
+	private String nombre;
+	private String categoria;
 	private String description;
 
-	private Employee() {}
+	private Instrumento() {}
 
-	public Employee(String firstName, String lastName, String description) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public Instrumento(String nombre, String categoria, String description) {
+		this.nombre = nombre;
+		this.categoria = categoria;
 		this.description = description;
 	}
 
@@ -26,17 +26,17 @@ public class Employee {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		Employee employee = (Employee) o;
-		return Objects.equals(id, employee.id) &&
-			Objects.equals(firstName, employee.firstName) &&
-			Objects.equals(lastName, employee.lastName) &&
-			Objects.equals(description, employee.description);
+		Instrumento instrumento = (Instrumento) o;
+		return Objects.equals(id, instrumento.id) &&
+			Objects.equals(nombre, instrumento.nombre) &&
+			Objects.equals(categoria, instrumento.categoria) &&
+			Objects.equals(description, instrumento.description);
 	}
 
 	@Override
 	public int hashCode() {
 
-		return Objects.hash(id, firstName, lastName, description);
+		return Objects.hash(id, nombre, categoria, description);
 	}
 
 	public Long getId() {
